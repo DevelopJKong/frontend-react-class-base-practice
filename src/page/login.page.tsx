@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
 import { countAtom, store, atomQuery } from "../atom/main.atom";
+import { fetchLogin } from "../api/user.api";
 
 type LoginProps = object;
 
@@ -43,6 +44,9 @@ export default class Login extends Component<LoginProps, LoginState> {
           }}
         >
           클릭
+        </button>
+        <button type="button" onClick={() => fetchLogin()}>
+          API 호출
         </button>
         <div>{JSON.stringify(this.state.atomQuery, null, 2)}</div>
         <Link to="/">홈</Link>
