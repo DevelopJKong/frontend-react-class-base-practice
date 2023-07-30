@@ -1,14 +1,31 @@
 import * as Api from "backend-nestia-base-nest-cafesmallhouse/lib/api/functional";
+import { loginStorageAtom, store } from "../atom/main.atom";
 
-export const fetchLogin = async () => {
+interface IFetchLogin {
+  email: string;
+  password: string;
+}
+
+export const fetchLogin = async ({ email, password }: IFetchLogin) => {
   const response = await Api.users.login(
     {
       host: "http://127.0.0.1:8000",
     },
     {
-      email: "jeongbin@naver.com",
-      password: "Aasd1234!@",
+      email,
+      password,
     }
   );
-  console.log(response);
+
+  if (response.message.statusCode !== 200)
+    throw new Error(response.message.text);
+
+  if (typeof response.data === "object" && response.data.token) {
+    store.set(loginStorageAtom, {
+      email,
+      token: response.data.token,
+    });
+
+    window.location.href = "/";
+  }
 };

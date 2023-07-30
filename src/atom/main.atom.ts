@@ -1,6 +1,6 @@
 import { atom, createStore } from "jotai";
 import { atomsWithQuery } from "jotai-tanstack-query";
-import { loadable } from "jotai/utils";
+import { atomWithStorage, loadable } from "jotai/utils";
 
 const DEBUG_LABEL = "countAtom";
 
@@ -17,5 +17,10 @@ const [userAtom] = atomsWithQuery((get) => ({
 }));
 
 export const atomQuery = loadable(userAtom);
+
+export const loginStorageAtom = atomWithStorage(
+  "login",
+  JSON.parse(localStorage.getItem("login") || "{}")
+);
 
 export const store = createStore();
