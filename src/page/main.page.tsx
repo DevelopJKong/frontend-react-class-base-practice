@@ -1,8 +1,8 @@
-import { Component } from "react";
-import { countAtom, store } from "../atom/main.atom";
-import { Link } from "react-router-dom";
+import { Component } from 'react';
+import { countAtom, store } from '../atom/main.atom';
+import { Link } from 'react-router-dom';
 
-type MainProps = object;
+type MainProps = Record<string, unknown>;
 
 type MainState = {
   count: number;
@@ -29,11 +29,11 @@ export default class Main extends Component<MainProps, MainState> {
   render() {
     return (
       <div>
-        <button type="button" onClick={this.onClick}>
+        <button type='button' onClick={this.onClick}>
           클릭 {this.state.count}
         </button>
         <button
-          type="button"
+          type='button'
           onClick={() => {
             this.state.setAtomCount(this.state.atomCount + 1);
             this.setState((state) => ({ atomCount: state.atomCount + 1 }));
@@ -41,7 +41,7 @@ export default class Main extends Component<MainProps, MainState> {
         >
           jotai atom {store.get(countAtom)}
         </button>
-        <Link to="/login">로그인</Link>
+        <Link to='/login'>로그인</Link>
       </div>
     );
   }

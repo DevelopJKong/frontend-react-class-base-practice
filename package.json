@@ -12,8 +12,8 @@
   "dependencies": {
     "@tanstack/query-core": "^4.32.0",
     "axios": "^1.4.0",
-    "backend-nestia-base-nest-cafesmallhouse": "^0.1.2",
-    "jotai": "^2.2.2",
+    "backend-nestia-base-nest-cafesmallhouse": "^0.1.4",
+    "jotai": "^2.3.1",
     "jotai-tanstack-query": "^0.7.1",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
@@ -22,15 +22,18 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.196",
-    "@types/react": "^18.2.15",
+    "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
-    "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "@typescript-eslint/parser": "^6.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.3.0",
+    "@typescript-eslint/parser": "^6.3.0",
     "@vitejs/plugin-react": "^4.0.3",
+    "autoprefixer": "^10.4.14",
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
-    "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "postcss": "^8.4.27",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.9"
   }
 }
