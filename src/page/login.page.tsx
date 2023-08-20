@@ -66,6 +66,10 @@ export default class Login extends Component<LoginProps, LoginState> {
     });
   }
 
+  onValid(): void {
+    console.log('onValid');
+  }
+
   render() {
     return (
       <Wrapper>
